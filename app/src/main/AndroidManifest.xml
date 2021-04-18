@@ -12,6 +12,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".CustomBroadcastReceiver" />
 		<service android:enabled="true" android:name=".ElServicio" />
     </application>
 </manifest>
