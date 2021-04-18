@@ -18,20 +18,20 @@ public class ElServicio extends Service {
 	
 	@Override
 	public void onCreate() {
-		Toast.makeText(this, R.string.creaserv, Toast.LENGTH_LONG).show();
+		SingleToast.show(this, getString(R.string.creaserv), Toast.LENGTH_LONG);
 		player = MediaPlayer.create(this, R.raw.train);
 		player.setLooping(true);
 	}
 
 	@Override
 	public void onDestroy() {
-		Toast.makeText(this, R.string.finaserv, Toast.LENGTH_LONG).show();
+		SingleToast.show(this, getString(R.string.finaserv), Toast.LENGTH_LONG);
 		player.stop();
 	}
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startid) {
-		Toast.makeText(this, R.string.iniserv, Toast.LENGTH_LONG).show();
+		SingleToast.show(this, getString(R.string.iniserv), Toast.LENGTH_LONG);
 		player.start();
 		return startid;		
 	}	
