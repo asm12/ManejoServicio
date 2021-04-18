@@ -2,6 +2,7 @@ package com.android.mdw.demo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 public class Main extends Activity implements OnClickListener {
     private Intent in;
+    private MusicIntentReceiver musicReceiver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class Main extends Activity implements OnClickListener {
         createButtons();
 
         in = new Intent(this, CustomBroadcastReceiver.class);
+
+        registerHeadsetReceiver();
     }
 
     private void createButtons() {
@@ -29,6 +33,13 @@ public class Main extends Activity implements OnClickListener {
         btnSonido.setOnClickListener(this);
         btnCancion.setOnClickListener(this);
         btnFin.setOnClickListener(this);
+    }
+
+    private void registerHeadsetReceiver() {
+        IntentFilter filter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+        filter.addAction(Intent.ACTION_HEADSET_PLUG);
+        musicReceiver = new MusicIntentReceiver();
+        registerReceiver(musicReceiver, filter);
     }
 
     @Override
@@ -48,5 +59,13 @@ public class Main extends Activity implements OnClickListener {
                 break;
         }
         sendBroadcast(in);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(musicReceiver != null){
+            unregisterReceiver(musicReceiver);
+        }
     }
 }
