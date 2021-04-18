@@ -42,6 +42,7 @@ public class CustomBroadcastReceiver extends BroadcastReceiver {
                 SingleToast.show(context, "Intent recibido" +
                         "ElReceptor - Detención Reproducción", Toast.LENGTH_SHORT);
             }
+
             if (stop) {
                 context.stopService(toSend);
             } else {

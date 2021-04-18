@@ -11,6 +11,16 @@ public class SingleToast {
         if (mToast != null) mToast.cancel();
         mToast = Toast.makeText(context, text, duration);
         mToast.show();
+        sleep();
+
+    }
+
+    private static void sleep() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 
