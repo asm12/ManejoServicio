@@ -9,4 +9,6 @@
     <string name="iniciar_sonido">Iniciar Sonido</string>
     <string name="iniciar_cancion">Iniciar Cancion</string>
     <string name="detener">Detener</string>
+    <string name="toast_sonido">Seleccionado Sonido</string>
+    <string name="toast_cancion">Seleccionado Cancion</string>
 </resources>
