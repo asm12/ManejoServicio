@@ -44,6 +44,7 @@ public class Main extends Activity implements OnClickListener {
                 break;
             case R.id.boton_fin:
                 in.putExtra("action", getString(R.string.detener));
+                SingleToast.show(this, getString(R.string.detener), Toast.LENGTH_SHORT);
                 break;
         }
         sendBroadcast(in);
