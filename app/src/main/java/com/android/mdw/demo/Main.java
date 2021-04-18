@@ -15,24 +15,34 @@ public class Main extends Activity implements OnClickListener {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
 
-    Button btnInicio = (Button) findViewById(R.id.btnInicio);
-    Button btnFin = (Button) findViewById(R.id.btnFin);
+    createButtons();
 
-    btnInicio.setOnClickListener(this);
+    in = new Intent(this, CustomBroadcastReceiver.class);
+  }
+
+  private void createButtons() {
+    Button btnSonido = (Button) findViewById(R.id.boton_sonido);
+    Button btnCancion = (Button) findViewById(R.id.boton_cancion);
+    Button btnFin = (Button) findViewById(R.id.boton_fin);
+
+    btnSonido.setOnClickListener(this);
+    btnCancion.setOnClickListener(this);
     btnFin.setOnClickListener(this);
-
-    in = new Intent(this, ElServicio.class);
   }
 
   @Override
   public void onClick(View src) {
     switch (src.getId()) {
-    case R.id.btnInicio:      
-      startService(in);
+    case R.id.boton_sonido:
+      in.putExtra("action", R.string.iniciar_sonido);
       break;
-    case R.id.btnFin:
-      stopService(in);
+    case R.id.boton_cancion:
+      in.putExtra("action", R.string.iniciar_cancion);
+      break;
+    case R.id.boton_fin:
+      in.putExtra("action", R.string.detener);
       break;
     }
+    sendBroadcast(in);
   }
 }

@@ -13,18 +13,25 @@
 	<LinearLayout  
 		android:layout_width="match_parent" 
 		android:layout_height="wrap_content"
-		android:gravity="center">
+		android:gravity="center"
+		android:orientation="vertical">
 		<Button 
-			android:text="Inicio" 
-			android:id="@+id/btnInicio" 
+			android:text="Reproducir Sonido"
+			android:id="@+id/boton_sonido"
 			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</Button>
+		<Button
+			android:text="Reproducir Cancion"
+			android:id="@+id/boton_cancion"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 		</Button>
 		<Button 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
 			android:text="Detener" 
-			android:id="@+id/btnFin">
+			android:id="@+id/boton_fin">
 		</Button>		
 	</LinearLayout>
 </LinearLayout>

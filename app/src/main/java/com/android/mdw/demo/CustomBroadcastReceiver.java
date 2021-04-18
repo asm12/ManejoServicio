@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 public class CustomBroadcastReceiver extends BroadcastReceiver {
-    private static final String TAG = "MyBroadcastReceiver";
+    private static final String TAG = "CustomBroadcastReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -17,7 +17,6 @@ public class CustomBroadcastReceiver extends BroadcastReceiver {
     }
 
     private static class Task extends AsyncTask<String, Integer, String> {
-
         private final PendingResult pendingResult;
         private final Intent intent;
 

@@ -5,4 +5,8 @@
     <string name="iniserv">Servicio Iniciado</string>
     <string name="creaserv">Servicio Creado</string>
     <string name="finaserv">Servicio Finalizado</string>
+    <string name="action">Action</string>
+    <string name="iniciar_sonido">Iniciar Sonido</string>
+    <string name="iniciar_cancion">Iniciar Cancion</string>
+    <string name="detener">Detener</string>
 </resources>
